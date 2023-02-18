@@ -1,0 +1,138 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+body {
+    background: rgb(115, 67, 15) url('./images/table.jpg') no-repeat;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    line-height: 1.50;
+    letter-spacing: 0.2em;
+    color: #b41111;
+    font-size: 24px;
+    font-weight: 900;
+ }
+ 
+.container {
+  width: 140px;
+  height: 200px;
+  margin: 50px auto;
+  position: relative;
+  transform: rotate(10deg);
+}
+.card {
+    width: 288px;
+    height: 417px;
+    cursor: url('./images/cursor.svg'), auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-origin: 50% 200% 0;
+}
+svg {
+    width: 100%;
+    height: 100%;
+}
+.name-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 3px 0 0 8px;
+}
+.name-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 8px 3px 0;
+    rotate: 180deg;
+}
+.front,
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    backface-visibility: hidden;
+    transition: all 1.5s;
+}
+.front {
+    background: #ddd url(./images/2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+}
+.front1 {
+    animation: flip-front alternate forwards;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+.back {
+    transform: rotateY(180deg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+.back1 {
+    animation: flip-back alternate forwards;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+}
+.card:hover .front {
+    transform: rotateY(180deg);
+
+}
+.card:hover .back {
+    transform: rotateY(0);
+
+}
+.card:hover .icon {
+    filter: drop-shadow(0px 0px 18px #b01905);
+}
+@keyframes flip-front {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(180deg);
+    }
+}
+@keyframes flip-back {
+    100% {
+        transform: rotateY(0deg);
+    }
+}
+.card:nth-of-type(1) {
+    transform: rotate(-45deg);
+  }
+  
+  
+  .card:nth-of-type(2) {
+    transform: rotate(-30deg);
+  }
+  
+  .card:nth-of-type(3) {
+    transform: rotate(-15deg);
+  }
+  
+  .card:nth-of-type(4) {
+    transform: rotate(0deg);
+  }
+  
+  .card:nth-of-type(5) {
+    transform: rotate(15deg);
+  }
+  
+  .card:nth-of-type(6) {
+    transform: rotate(30deg);
+  }
